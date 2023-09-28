@@ -22583,6 +22583,32 @@ var require_react_dom = __commonJS((exports, module) => {
   }
 });
 
+// node_modules/react-dom/client.js
+var require_client = __commonJS((exports) => {
+  var m = __toESM(require_react_dom(), 1);
+  if (false) {
+  } else {
+    i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+    exports.createRoot = function(c, o) {
+      i.usingClientEntryPoint = true;
+      try {
+        return m.createRoot(c, o);
+      } finally {
+        i.usingClientEntryPoint = false;
+      }
+    };
+    exports.hydrateRoot = function(c, h, o) {
+      i.usingClientEntryPoint = true;
+      try {
+        return m.hydrateRoot(c, h, o);
+      } finally {
+        i.usingClientEntryPoint = false;
+      }
+    };
+  }
+  var i;
+});
+
 // node_modules/react/cjs/react-jsx-dev-runtime.development.js
 var require_react_jsx_dev_runtime_development = __commonJS((exports) => {
   var React = __toESM(require_react(), 1);
@@ -23445,32 +23471,255 @@ var require_jsx_dev_runtime = __commonJS((exports, module) => {
   }
 });
 
-// src/index.tsx
-var import_react = __toESM(require_react(), 1);
-var import_react_dom = __toESM(require_react_dom(), 1);
+// src/app.tsx
+var import_react2 = __toESM(require_react(), 1);
+var client = __toESM(require_client(), 1);
+
+// src/Components/IconCheck.tsx
 var jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
-var root = import_react_dom.createRoot(document.getElementById("root"));
-var App = () => {
-  const [count, setCount] = import_react.useState(0);
-  const handleClick = () => {
-    setCount(count + 1);
+var IconCheck = () => {
+  return jsx_dev_runtime.jsxDEV("i", {
+    children: jsx_dev_runtime.jsxDEV("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      fill: "currentColor",
+      className: "w-4 h-4",
+      children: jsx_dev_runtime.jsxDEV("path", {
+        fillRule: "evenodd",
+        d: "M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z",
+        clipRule: "evenodd"
+      }, undefined, false, undefined, this)
+    }, undefined, false, undefined, this)
+  }, undefined, false, undefined, this);
+};
+var IconCheck_default = IconCheck;
+
+// src/Components/IconEdit.tsx
+var jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1);
+var IconEdit = () => {
+  return jsx_dev_runtime2.jsxDEV("i", {
+    children: jsx_dev_runtime2.jsxDEV("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewBox: "0 0 24 24",
+      strokeWidth: 1.5,
+      stroke: "currentColor",
+      className: "w-4 h-4",
+      children: jsx_dev_runtime2.jsxDEV("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        d: "M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+      }, undefined, false, undefined, this)
+    }, undefined, false, undefined, this)
+  }, undefined, false, undefined, this);
+};
+var IconEdit_default = IconEdit;
+
+// src/Components/IconTrash.tsx
+var jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1);
+var Trash = () => {
+  return jsx_dev_runtime3.jsxDEV("i", {
+    children: jsx_dev_runtime3.jsxDEV("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewBox: "0 0 24 24",
+      strokeWidth: 1.5,
+      stroke: "currentColor",
+      className: "w-4 h-4",
+      children: jsx_dev_runtime3.jsxDEV("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        d: "M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+      }, undefined, false, undefined, this)
+    }, undefined, false, undefined, this)
+  }, undefined, false, undefined, this);
+};
+var IconTrash_default = Trash;
+
+// src/Components/ToDoList.tsx
+var jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime(), 1);
+var ToDoList = ({ todos, setTodos }) => {
+  const handleDelete = (id) => {
+    setTodos(todos.filter((td) => td.id !== id));
   };
-  return jsx_dev_runtime.jsxDEV("div", {
+  const getObjLocation = (id) => {
+    return todos.findIndex((todo) => todo.id === id);
+  };
+  const handleComplete = (id) => {
+    const objectToReplace = getObjLocation(id);
+    todos[objectToReplace].completed = !todos[objectToReplace].completed;
+    setTodos([...todos]);
+  };
+  const handleEdit = (id) => {
+    const objectToReplace = getObjLocation(id);
+    todos[objectToReplace].editMode = !todos[objectToReplace].editMode;
+    setTodos([...todos]);
+  };
+  const handleKeyDown = (e, id) => {
+    if (e.key === "Enter" || e.key === "Escape") {
+      const objectToReplace = getObjLocation(id);
+      todos[objectToReplace].task = e.target.value;
+      todos[objectToReplace].editMode = false;
+      setTodos([...todos]);
+    }
+  };
+  const EmptyState = () => {
+    return jsx_dev_runtime4.jsxDEV(jsx_dev_runtime4.Fragment, {
+      children: jsx_dev_runtime4.jsxDEV("p", {
+        children: "No tasks found!"
+      }, undefined, false, undefined, this)
+    }, undefined, false, undefined, this);
+  };
+  if (todos.length === 0) {
+    return jsx_dev_runtime4.jsxDEV(EmptyState, {}, undefined, false, undefined, this);
+  }
+  return jsx_dev_runtime4.jsxDEV("div", {
+    className: "overflow-x-auto relative",
+    children: jsx_dev_runtime4.jsxDEV("table", {
+      className: "w-full text-sm text-left text-gray-500 dark:text-gray-400",
+      children: [
+        jsx_dev_runtime4.jsxDEV("thead", {
+          className: "text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400",
+          children: jsx_dev_runtime4.jsxDEV("tr", {
+            children: [
+              jsx_dev_runtime4.jsxDEV("th", {
+                scope: "col",
+                className: "py-3 px-6",
+                children: "Task"
+              }, undefined, false, undefined, this),
+              jsx_dev_runtime4.jsxDEV("th", {
+                scope: "col",
+                className: "py-3 px-6 ",
+                children: "Modify"
+              }, undefined, false, undefined, this)
+            ]
+          }, undefined, true, undefined, this)
+        }, undefined, false, undefined, this),
+        jsx_dev_runtime4.jsxDEV("tbody", {
+          children: todos.map(({ id, task, completed, editMode }, index) => {
+            return jsx_dev_runtime4.jsxDEV("tr", {
+              className: "bg-white border-b dark:bg-gray-800 dark:border-gray-700",
+              children: [
+                !editMode ? jsx_dev_runtime4.jsxDEV("th", {
+                  scope: "row",
+                  className: `py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white ${completed ? "line-through" : null}`,
+                  children: task
+                }, undefined, false, undefined, this) : jsx_dev_runtime4.jsxDEV("th", {
+                  scope: "row",
+                  className: "py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white",
+                  children: jsx_dev_runtime4.jsxDEV("input", {
+                    type: "text",
+                    name: "toDoTask",
+                    id: "toDoTask",
+                    placeholder: task,
+                    className: "p-2.5 border bg-transparent",
+                    onKeyDown: (e) => handleKeyDown(e, id)
+                  }, undefined, false, undefined, this)
+                }, undefined, false, undefined, this),
+                jsx_dev_runtime4.jsxDEV("td", {
+                  className: "py-4 px-6",
+                  children: [
+                    jsx_dev_runtime4.jsxDEV("button", {
+                      onClick: () => handleComplete(id),
+                      children: jsx_dev_runtime4.jsxDEV(IconCheck_default, {}, undefined, false, undefined, this)
+                    }, undefined, false, undefined, this),
+                    jsx_dev_runtime4.jsxDEV("button", {
+                      onClick: () => handleEdit(id),
+                      children: jsx_dev_runtime4.jsxDEV(IconEdit_default, {}, undefined, false, undefined, this)
+                    }, undefined, false, undefined, this),
+                    jsx_dev_runtime4.jsxDEV("button", {
+                      onClick: () => handleDelete(id),
+                      children: jsx_dev_runtime4.jsxDEV(IconTrash_default, {}, undefined, false, undefined, this)
+                    }, undefined, false, undefined, this)
+                  ]
+                }, undefined, true, undefined, this)
+              ]
+            }, index, true, undefined, this);
+          })
+        }, undefined, false, undefined, this)
+      ]
+    }, undefined, true, undefined, this)
+  }, undefined, false, undefined, this);
+};
+var ToDoList_default = ToDoList;
+
+// src/Components/Title.tsx
+var jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime(), 1);
+var Title = ({ title }) => {
+  return jsx_dev_runtime5.jsxDEV("h1", {
+    children: title
+  }, undefined, false, undefined, this);
+};
+var Title_default = Title;
+
+// src/Components/Form.tsx
+var import_react = __toESM(require_react(), 1);
+var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
+var Form = ({ todos, setTodos }) => {
+  const taskRef = import_react.useRef(null);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setTodos([
+      ...todos,
+      {
+        id: crypto.randomUUID(),
+        task: taskRef.current?.value,
+        completed: false,
+        editMode: false
+      }
+    ]);
+    if (taskRef.current) {
+      taskRef.current.value = "";
+    }
+  };
+  return jsx_dev_runtime6.jsxDEV("form", {
+    className: "mt-12 mb-8",
+    onSubmit: handleSubmit,
     children: [
-      jsx_dev_runtime.jsxDEV("h1", {
-        children: "Hellooooo Nurse:"
+      jsx_dev_runtime6.jsxDEV("label", {
+        htmlFor: "toDoTask",
+        className: "hidden",
+        children: "To Do Input"
       }, undefined, false, undefined, this),
-      jsx_dev_runtime.jsxDEV("p", {
-        children: [
-          "Counter: ",
-          count
-        ]
-      }, undefined, true, undefined, this),
-      jsx_dev_runtime.jsxDEV("button", {
-        onClick: handleClick,
-        children: "Increase"
+      jsx_dev_runtime6.jsxDEV("input", {
+        type: "text",
+        required: true,
+        placeholder: "Enter a task...",
+        className: "p-2.5 border-2 bg-transparent",
+        ref: taskRef
+      }, undefined, false, undefined, this),
+      jsx_dev_runtime6.jsxDEV("button", {
+        type: "submit",
+        className: "focus:outline-none border-none text-lime-500",
+        children: "Submit"
       }, undefined, false, undefined, this)
     ]
   }, undefined, true, undefined, this);
 };
-root.render(jsx_dev_runtime.jsxDEV(App, {}, undefined, false, undefined, this));
+var Form_default = Form;
+
+// src/app.tsx
+var jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime(), 1);
+var root = client.createRoot(document.getElementById("root"));
+var App = () => {
+  const [todos, setTodos] = import_react2.react.useState([]);
+  import_react2.react.useEffect(() => {
+    console.log(todos);
+  }, [todos]);
+  return jsx_dev_runtime7.jsxDEV(jsx_dev_runtime7.Fragment, {
+    children: [
+      jsx_dev_runtime7.jsxDEV(Title_default, {
+        title: "Todo List App"
+      }, undefined, false, undefined, this),
+      jsx_dev_runtime7.jsxDEV(Form_default, {
+        todos,
+        setTodos
+      }, undefined, false, undefined, this),
+      jsx_dev_runtime7.jsxDEV(ToDoList_default, {
+        todos,
+        setTodos
+      }, undefined, false, undefined, this)
+    ]
+  }, undefined, true, undefined, this);
+};
+root.render(jsx_dev_runtime7.jsxDEV(App, {}, undefined, false, undefined, this));
